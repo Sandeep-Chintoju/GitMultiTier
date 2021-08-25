@@ -7,14 +7,14 @@ module "MyThreeTierApp" {
 }
 
 
-module "s3_backend1" {
+module "s3_backend" {
   source                      = "youngfeldt/backend-s3/aws"
   version                     = ">= 1.0.0"
-  backend_s3_bucket           = "s3-terraform"
-  backend_dynamodb_lock_table = "multiclouddb-sandydb"
+  backend_s3_bucket           = "sandy-s3-terraform"
+  backend_dynamodb_lock_table = "multicloud-db-sandydb"
   create_dynamodb_lock_table  = true
   create_s3_bucket            = true
-  s3_key                      = "multicloudsandys3.state"
+  s3_key                      = "multicloudsandy-s3.state"
 
 }
 
